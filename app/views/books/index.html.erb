@@ -1,0 +1,16 @@
+﻿<h2><img src="/imgs/bullet1.gif" />好书推荐</h2>
+<% @books.each do |book| %>
+<div class="prod clear"> <img src="/pics/<%= book.id%>.jpg" class="pic" />
+  <div class="explain_box">
+    <div class="top"></div>
+    <div class="content">
+      <div class="title"><a href="#"><%= book.name %></a></div>
+      <div class="details"><%= book.content %><br/>
+      </div>
+      <div class="more"><%= link_to '- 详细说明 -', book %> <%= link_to '- 编辑 -', edit_book_path(book) %> <%= link_to '- 删除 -', book, :confirm => 'Are you sure?', :method => :delete %></div>
+    </div>
+    <div class="bottom"></div>
+    特价：<%= book.price %> 还剩数量：<%= book.count %> </div>
+</div>
+<% end %>
+<br /><%= link_to '上架新图书', new_book_path %>

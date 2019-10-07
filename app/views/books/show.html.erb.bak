@@ -1,0 +1,18 @@
+﻿<p id="notice"><%= notice %></p>
+<div class="crumb_nav"> <a href="/">首页</a> &gt;&gt;查看图书详细信息 </div>
+<h2><img src="/imgs/bullet1.gif" /><%= @book.name %></h2>
+<div class="prod clear"> <img src="/pics/<%= @book.id%>.jpg" class="pic" />
+  <div class="prod_det_box">
+    <div class="top"></div>
+    <div class="content">
+      <div class="title"><a href="#"><%= @book.name %></a></div>
+      <div class="details"><%= @book.content %>
+        <div class="price"><strong>特价：</strong> <span class="red"><%= @book.price %>￥</span></div>
+        <div class="price"><strong>还剩数量：</strong> <span class="red"><%= @book.count %></span></div>
+        <a href="#" class="more"><img src="/imgs/order_now.gif" alt="" title="" border="0" /></a> </div>
+      <div class="clear"></div>
+    </div>
+    <div class="bottom"></div>
+  </div>
+</div>
+<%= link_to '编辑信息', edit_book_path(@book) %> | <%= link_to '返回列表', books_path %>

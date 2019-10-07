@@ -1,0 +1,4 @@
+<h1>welcome 北风书城</h1>
+<p>
+由此进入：<%= link_to "北风书城" , books_path %>
+</p>

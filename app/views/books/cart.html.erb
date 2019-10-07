@@ -1,0 +1,23 @@
+﻿<div class="crumb_nav"><a href="">首页</a>查看购物车</div>
+<h2><img src="/imgs/bullet1.gif">我的购物车</h2>
+<div class="feat_prod_box_details">
+<table class="cart_table">
+<tr class="cart_title">
+  <td>封面图片</td>
+  <td>图书名称</td>
+  <td>价格</td>
+  <td>数量</td>
+  <td>总价</td>
+</tr>
+<% @books.each do |book| %>
+<tr>
+  <td><img src="/pics/<%= book.id %>.jpg" border="0" class="cart_tumb"/></td>
+  <td><%= book.name %></td>
+  <td><%= book.price %></td>
+  <td>2</td>
+  <td>￥<%= book.price*2  %></td>
+</tr>
+<% end %>
+</table>
+</div>
+<%= link_to '查看第一条购物信息' , {:controller=>'cart' , :action=>'first'} %>
